@@ -1,0 +1,261 @@
+<html>
+
+<head>
+  <title>Yummy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <meta name="description" content="Yummy app" />
+  <meta name="keywords" content="Yummy app" />
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class=" ">
+<!------------------------loading----------------------------->
+<div class="landing ">
+  <span class="loader"></span>
+  <!-- 
+    
+    $(".landing").removeClass("d-none")
+     $(".landing").fadeIn(400)
+  $(".landing").fadeOut(300)  
+
+
+
+-->
+
+ </div>
+
+
+
+<!---------------------------- nav ---------------------------->
+
+  <div class="side-Nav min-vh-100 position-fixed d-flex top-0 " style="left: 0px;">
+    <div id="slidAnimate" class="side-tap  d-flex flex-column justify-content-between min-vh-100 py-2 px-3">
+      <div class="links ">
+        <ul class="list-unstyled text-white">
+          <li onclick="search()" class="py-2 ">Search</li>
+          <li onclick="getCatego()" class="py-2 ">Categories</li>
+          <li onclick="getArea()" class="py-2 ">Area</li>
+          <li onclick="getIngred()"  class="py-2 ">Ingredients</li>
+          <li onclick="contact()" class="py-2 ">Contact Us</li>
+
+        </ul>
+
+
+      </div>
+
+      <div class="nav-icone">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-solid fa-globe"></i>
+        <p class=" mt-2 "> Copyright Â© 2019 All Rights Reserved.</p>
+
+
+      </div>
+
+    </div>
+
+
+    <div class="navlogo d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black">
+
+      <img class="logo " src="images/logo.png" alt="">
+      <i id="close" class="fas fa-2x fa-close d-none"></i>
+      <i id="open" class="fa-solid fa-bars fa-2x"></i>
+      <div class="iccona">
+        <i class="fa-solid fa-globe d-block"></i>
+        <i class="fa-solid mt-2 fa-share-nodes"></i>
+      </div>
+    </div>
+
+
+  </div>
+  <!---------------------------- home ---------------------------->
+
+  <section id="home" class="">
+    
+    <div id="SearchCont" class="container ">
+     
+    </div>
+
+    <div class="container  ">
+      <div id="MealRow" class=" row py-5 g-4">
+       
+      </div>
+    </div>
+  
+
+
+
+
+  </section>
+
+  <!---------------------------- details ---------------------------->
+  <section id="details" class="details d-none">
+    <div class="container mt-5">
+      <div class="row">
+    
+      </div>
+    </div>
+
+
+  </section>
+
+  <!---------------------------- search ---------------------------->
+  <section id="search" class="d-none">
+    <div class="container py-5">
+      <div class="row">
+       
+      </div>
+    </div>
+  </section>
+
+
+<!----------------------contacts-------------------------------->
+<section id="contact" class="d-none">
+
+  <div class="container">
+    <div class="row py-5 g-4 " id="rowData"><div class="contact min-vh-100 d-flex justify-content-center align-items-center">
+  <div class="container w-75 text-center">
+  <div class="row g-4">
+    <div class="col-md-6">
+        <input id="nameInput" onkeyup="inputsValidation()" type="text" class="form-control" placeholder="Enter Your Name">
+        <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Special characters and numbers not allowed
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input id="emailInput" onkeyup="inputsValidation()" type="email" class="form-control " placeholder="Enter Your Email">
+        <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Email not valid *exemple@yyy.zzz
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input id="phoneInput" onkeyup="inputsValidation()" type="text" class="form-control " placeholder="Enter Your Phone">
+        <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid Phone Number
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input id="ageInput" onkeyup="inputsValidation()" type="number" class="form-control " placeholder="Enter Your Age">
+        <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid age
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input id="passwordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Enter Your Password">
+        <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid password *Minimum eight characters, at least one letter and one number:*
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input id="repasswordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Repassword">
+        <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid repassword 
+        </div>
+    </div>
+  </div>
+  <button id="submitBtn" disabled="" class="btn btn-outline-danger px-2 mt-3">Submit</button>
+  </div>
+  </div> </div>
+  </div>
+  
+</section>
+
+
+
+<!-----------
+  
+  function Validname() {
+  let reg1 =/^[a-zA-Z ]+$/
+  
+  return reg1.test(document.getElementById("INputName").value);
+
+}
+
+function Validemail() {
+  return (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(document.getElementById("INputEmail").value))
+}
+
+function Validphone() {
+  return (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(document.getElementByI("INputphone").value))
+}
+
+function Validage() {
+  return (/^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$/.test(document.getElementById("INputAge").value))
+}
+
+function Validpassword() {
+  return (/^(?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{8,}$/.test(document.getElementById("INputpass").value))
+}
+
+function Validrepassword() {
+  return document.getElementById("INputRepass").value == document.getElementById("INputpass").value
+}
+
+  
+  
+  
+  
+
+let submitBtn = document.getElementById("submitBtn");
+  
+if (document.getElementById("INputName") != null) {
+  document.getElementById("INputName").addEventListener("focus", () => {
+    nameInputTouched = true
+  })
+}
+
+if (document.getElementById("INputEmail") != null) {
+  document.getElementById("INputEmail").addEventListener("focus", () => {
+    emailInputTouched = true
+  })
+}
+
+if (document.getElementById("INputphone") != null) {
+  document.getElementById("INputphone").addEventListener("focus", () => {
+    phoneInputTouched = true
+  })
+}
+if (document.getElementById("INputAge") != null) {
+  document.getElementById("INputAge").addEventListener("focus", () => {
+    ageInputTouched = true
+  })
+}
+if (document.getElementById("INputpass") != null) {
+  document.getElementById("INputpass").addEventListener("focus", () => {
+    passwordInputTouched = true
+  })
+}
+
+if (document.getElementById("INputRepass") != null) {
+  document.getElementById("INputRepass").addEventListener("focus", () => {
+    repasswordInputTouched = true
+  })
+}
+
+  
+  
+  --------->
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.6.3.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
